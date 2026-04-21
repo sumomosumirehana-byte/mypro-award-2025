@@ -1,0 +1,802 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マイプロアワード2025 受賞作品紹介 特設サイト — 明蓬館高等学校・アットマーク国際高等学校</title>
+
+<meta name="description" content="明蓬館高等学校・アットマーク国際高等学校「マイプロアワード2025」受賞作品を紹介する特設サイト。課題解決型・創造型・知的発見型・教科推薦の4カテゴリ。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="マイプロアワード2025 受賞作品紹介 特設サイト">
+<meta property="og:description" content="令和7年度 マイプロアワード受賞作品紹介。明蓬館高等学校・アットマーク国際高等学校の優れた探究作品をご覧ください。">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg:          #d6e6f2;
+    --accent:      #b9d7ea;
+    --accent-dark: #769fcd;
+    --accent-deep: #4e7aaa;
+    --accent-pale: #e8f2f9;
+    --accent-muted:#6a8faa;
+    --text:        #1c2d3a;
+    --text-sub:    #3d5f78;
+    --white:       #ffffff;
+    --shadow:      rgba(118,159,205,0.18);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(circle, rgba(118,159,205,0.28) 1px, transparent 1px);
+    background-size: 24px 24px;
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+  }
+
+  /* ── HERO ─────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    background: var(--accent-deep) url('hero_bg.jpeg') center/cover no-repeat;
+    color: #fff;
+    padding: 64px 40px 56px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.42) 100%);
+    pointer-events: none;
+  }
+  .hero > * { position: relative; z-index: 1; }
+
+  .hero-logo {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.1s forwards;
+  }
+  .hero-logo img {
+    display: block;
+    height: 46px;
+    width: auto;
+  }
+  .hero h1 {
+    font-size: clamp(1.5rem, 4.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.3s forwards;
+  }
+  .hero-school {
+    display: inline-block;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    color: rgba(255,255,255,0.65);
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.20);
+    border-radius: 999px;
+    padding: 4px 16px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.5s forwards;
+  }
+
+  /* ── FILTER NAV ───────────────────────────────────── */
+  .filter-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(118,159,205,0.30);
+    padding: 10px 32px;
+    display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+    justify-content: center;
+  }
+  .filter-label {
+    font-size: 0.68rem; letter-spacing: 0.16em;
+    color: var(--text-sub); margin-right: 4px; font-weight: 500;
+  }
+  .filter-btn {
+    padding: 5px 18px;
+    border: 1.5px solid rgba(135,206,250,0.55);
+    background: transparent;
+    border-radius: 999px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.75rem; font-weight: 500;
+    color: var(--accent-muted);
+    cursor: pointer; transition: all 0.18s;
+  }
+  .filter-btn:hover {
+    border-color: var(--accent-dark);
+    background: rgba(135,206,250,0.15);
+    color: var(--accent-deep);
+  }
+  .filter-btn.active {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    color: #fff;
+    box-shadow: 0 3px 10px rgba(135,206,250,0.35);
+  }
+
+  /* ── NOTICE BAND (お知らせ) ───────────────────────── */
+  .notice-band {
+    background: var(--bg);
+    color: var(--text);
+    padding: 32px 40px;
+    opacity: 0; transform: translateY(12px); transition: opacity 0.5s, transform 0.5s;
+  }
+  .notice-band.visible { opacity: 1; transform: none; }
+  .notice-band-inner { max-width: 840px; margin: 0 auto; }
+  .notice-label {
+    display: inline-block;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em;
+    background: var(--accent-dark);
+    color: #fff;
+    border-radius: 4px; padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+  .notice-title {
+    font-size: 1.05rem; font-weight: 700;
+    letter-spacing: 0.05em; margin-bottom: 12px;
+    color: var(--text);
+  }
+  .notice-body {
+    font-size: 0.82rem; line-height: 1.85;
+    color: var(--text);
+  }
+  .notice-body p + p { margin-top: 0.6em; }
+
+  /* ── REVIEW BAND (総評) ───────────────────────────── */
+  .review-band {
+    background: var(--accent-deep);
+    color: #fff;
+    padding: 36px 40px;
+    opacity: 0; transform: translateY(12px); transition: opacity 0.5s 0.1s, transform 0.5s 0.1s;
+  }
+  .review-band.visible { opacity: 1; transform: none; }
+  .review-band-inner {
+    max-width: 840px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .review-photo {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    border: 3px solid rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.12)
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='30' r='16' fill='rgba(255,255,255,0.3)'/%3E%3Cellipse cx='40' cy='75' rx='28' ry='22' fill='rgba(255,255,255,0.3)'/%3E%3C/svg%3E")
+      center/cover no-repeat;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.6rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.5);
+    flex-direction: column; gap: 4px;
+  }
+  /* 実写真に差し替える場合は .review-photo を img タグで置き換えてください */
+  .review-photo-hint { font-size: 0.58rem; text-align: center; line-height: 1.4; }
+  .review-content {}
+  .review-meta { margin-bottom: 10px; }
+  .review-badge {
+    display: inline-block;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em;
+    background: rgba(255,255,255,0.2); border-radius: 4px; padding: 3px 10px;
+    margin-bottom: 6px;
+  }
+  .review-name {
+    font-size: 0.82rem; color: rgba(255,255,255,0.75); letter-spacing: 0.08em;
+  }
+  .review-body {
+    font-size: 0.8rem; line-height: 1.85;
+    color: rgba(255,255,255,0.88);
+  }
+  .review-body p + p { margin-top: 0.55em; }
+
+  /* ── MAIN ─────────────────────────────────────────── */
+  main { max-width: 1160px; margin: 0 auto; padding: 48px 32px 100px; }
+
+  /* ── SECTION ──────────────────────────────────────── */
+  .section {
+    margin-bottom: 60px;
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  .section.visible { opacity: 1; transform: none; }
+  .section.hidden { display: none; }
+
+  .section-header {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 20px;
+  }
+  .section-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.88rem; font-weight: 700; letter-spacing: 0.06em;
+    color: var(--accent-deep);
+    background: var(--white);
+    border: 2px solid var(--accent-dark);
+    border-radius: 999px;
+    padding: 5px 18px;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .section-chip-emoji { font-size: 1rem; }
+
+  /* ── CARDS ────────────────────────────────────────── */
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+
+  .card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px var(--shadow);
+    transition: transform 0.22s, box-shadow 0.22s;
+    border-top: 4px solid transparent;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(135,206,250,0.28);
+  }
+  .card.top-award     { border-top-color: var(--accent-dark); }
+  .card.mid-award     { border-top-color: #5bb8e8; }
+  .card.special-award { border-top-color: #7ecbf0; }
+  .card.subject-award { border-top-color: var(--accent); }
+
+  .card-inner { padding: 20px 20px 16px; }
+
+  /* TAGS */
+  .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+  .tag {
+    display: inline-flex; align-items: center;
+    font-size: 0.7rem; font-weight: 500;
+    padding: 4px 12px; border-radius: 999px; line-height: 1;
+  }
+  .tag-最優秀賞   { background: #b8e4fb; color: #1a5070; }
+  .tag-優秀賞     { background: #cceeff; color: #1e6a90; }
+  .tag-審査員特別賞{ background: #daf3ff; color: #2a7aaa; }
+  .tag-subject    { background: var(--accent-pale); color: var(--accent-deep); }
+  .tag-category   { background: #f0f0f0; color: #555; font-size: 0.66rem; }
+
+  /* TITLE */
+  .card-title {
+    font-size: 0.95rem; font-weight: 700;
+    line-height: 1.55; color: var(--text); margin-bottom: 8px;
+  }
+
+  /* DESC */
+  .card-desc {
+    font-size: 0.78rem; line-height: 1.78; color: var(--text-sub);
+    margin-bottom: 10px;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+
+  /* JUDGE */
+  .card-judge {
+    background: var(--accent-pale);
+    border-radius: 8px;
+    padding: 8px 12px; margin-bottom: 14px;
+  }
+  .card-judge-label {
+    font-size: 0.63rem; font-weight: 700; letter-spacing: 0.12em;
+    color: var(--accent-deep); margin-bottom: 3px;
+  }
+  .card-judge-text {
+    font-size: 0.74rem; line-height: 1.65; color: #1e4a6a;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+
+  /* DETAIL BUTTON */
+  .card-detail-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+    color: var(--white);
+    background: var(--accent-dark);
+    padding: 6px 18px; border-radius: 999px;
+    border: none; cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+    transition: background 0.18s, transform 0.18s;
+  }
+  .card-detail-btn:hover { background: var(--accent-deep); transform: translateY(-1px); }
+
+  /* ── MODAL ────────────────────────────────────────── */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.48);
+    backdrop-filter: blur(4px);
+    align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: #fff;
+    border-radius: 20px;
+    max-width: 560px; width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 32px 32px 28px;
+    position: relative;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.22);
+    animation: modalIn 0.22s ease;
+  }
+  @keyframes modalIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:none} }
+  .modal-close {
+    position: absolute; top: 14px; right: 14px;
+    width: 32px; height: 32px; border-radius: 50%;
+    border: none; background: var(--accent-pale);
+    cursor: pointer; font-size: 1rem; color: var(--text-sub);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s;
+  }
+  .modal-close:hover { background: var(--accent); color: var(--text); }
+  .modal-tags { margin-bottom: 12px; }
+  .modal-title {
+    font-size: 1.08rem; font-weight: 700;
+    color: var(--text); line-height: 1.5;
+    margin-bottom: 14px; padding-right: 20px;
+  }
+  .modal-desc {
+    font-size: 0.82rem; line-height: 1.88;
+    color: var(--text-sub); margin-bottom: 18px;
+  }
+  .modal-judge {
+    background: var(--accent-pale);
+    border-radius: 10px;
+    padding: 12px 16px; margin-bottom: 24px;
+  }
+  .modal-judge-label {
+    font-size: 0.63rem; font-weight: 700;
+    letter-spacing: 0.12em; color: var(--accent-deep); margin-bottom: 5px;
+  }
+  .modal-judge-text {
+    font-size: 0.78rem; line-height: 1.75; color: #1e4a6a;
+  }
+  .modal-link {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em;
+    color: var(--white);
+    background: var(--accent-deep);
+    padding: 9px 24px; border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.18s;
+  }
+  .modal-link:hover { background: var(--text); }
+
+  /* ── FOOTER ───────────────────────────────────────── */
+  footer {
+    text-align: center; padding: 40px 32px 32px;
+    border-top: 1px solid var(--accent);
+    font-size: 0.72rem; letter-spacing: 0.14em; color: var(--text-sub);
+  }
+  .footer-logos {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .footer-logos a { display: inline-block; transition: opacity 0.2s; }
+  .footer-logos a:hover { opacity: 0.7; }
+  .footer-logos img { display: block; height: 40px; width: auto; }
+
+  /* ── ANIMATIONS ───────────────────────────────────── */
+  @keyframes fadeUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none} }
+
+  /* ── RESPONSIVE ───────────────────────────────────── */
+  @media(max-width:640px) {
+    .hero { padding: 48px 20px 40px; }
+    .notice-band, .review-band { padding: 24px 20px; }
+    .review-band-inner { grid-template-columns: 1fr; }
+    .review-photo { width: 80px; height: 80px; margin: 0 auto; }
+    main { padding: 32px 16px 80px; }
+    .filter-nav { padding: 9px 16px; }
+    .cards { grid-template-columns: 1fr; }
+  }
+
+  /* ── PRINT ────────────────────────────────────────── */
+  @media print {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    body { background: #fff; color: #000; font-size: 10pt; background-image: none; }
+    .hero { background: var(--accent-deep) !important; padding: 20pt 20pt 16pt; }
+    .filter-nav { display: none; }
+    .notice-band, .review-band { opacity: 1 !important; transform: none !important; }
+    .review-band-inner { grid-template-columns: 80pt 1fr; }
+    main { padding: 12pt 20pt 0; max-width: 100%; }
+    .section { opacity: 1 !important; transform: none !important; margin-bottom: 20pt; break-inside: avoid; }
+    .section.hidden { display: block !important; }
+    .cards { grid-template-columns: repeat(2, 1fr); gap: 8pt; }
+    .card { break-inside: avoid; box-shadow: none !important; border: 1pt solid #ccc !important; }
+    .card-desc, .card-judge-text { -webkit-line-clamp: unset !important; display: block !important; }
+    .card-link { background: none !important; color: var(--green-dark) !important; padding: 0; border-radius: 0; }
+    .card-link::after { content: " (" attr(href) ")"; font-size: 7pt; color: #666; font-weight: 400; }
+    footer { padding: 10pt 20pt; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ──────────────────────────────────────────── -->
+<header class="hero">
+  <div class="hero-logo">
+    <img src="logo_white.png" alt="明蓬館高等学校">
+    <img src="logo-kokusai-white.png" alt="アットマーク国際高等学校">
+  </div>
+  <h1>マイプロアワード2025<br>受賞作品紹介　特設サイト</h1>
+  <p class="hero-school">明蓬館高等学校　／　アットマーク国際高等学校</p>
+</header>
+
+<!-- ── お知らせ ───────────────────────────────────────── -->
+<div class="notice-band">
+  <div class="notice-band-inner">
+    <p class="notice-label">📢 お知らせ</p>
+    <p class="notice-title">2025マイプロアワード　審査結果および賞のお知らせ</p>
+    <div class="notice-body">
+      <p>エントリーいただきましたマイプロアワードは210点を超える多数の応募をいただきました。今年も力作揃いで審査も難航を極めましたが、最終的に最優秀賞各部門3作品、優秀賞各部門3作品、審査員特別賞2作品に決定いたしました。入賞されたみなさま、誠におめでとうございます。</p>
+      <p>各賞は来週中に学習センターへお届けします。卒業式・終業式にて表彰・贈呈式を行っていただければ幸いです。今年度も皆様のご協力のもと無事開催できましたこと、深く感謝申し上げます。次年度もどうぞよろしくお願いいたします。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── FILTER NAV ─────────────────────────────────────── -->
+<nav class="filter-nav">
+  <span class="filter-label">絞り込み</span>
+  <button class="filter-btn active" data-filter="all">すべて</button>
+  <button class="filter-btn" data-filter="課題解決型">課題解決型</button>
+  <button class="filter-btn" data-filter="創造型">創造型</button>
+  <button class="filter-btn" data-filter="知的発見型">知的発見型</button>
+  <button class="filter-btn" data-filter="教科推薦">教科推薦</button>
+</nav>
+
+<main>
+
+<!-- 課題解決型 -->
+<section class="section" data-category="課題解決型">
+  <div class="section-header">
+    <span class="section-chip"><span class="section-chip-emoji">💡</span>課題解決型</span>
+  </div>
+  <div class="cards">
+    <div class="card top-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-最優秀賞">🏆 最優秀賞</span><span class="tag tag-category">課題解決型</span></div>
+      <p class="card-title">飲食店（カフェ）探検隊２！！！！</p>
+      <p class="card-desc">「理想のカフェ店員」をテーマに2年越しで取り組んだ進路直結型探究。スターバックスやドトールなど9店舗への潜入調査、校内への「KIMURA CAFE」2回出店、Canvaでのロゴ・チラシ自作まで、PDCAを体系化。自らの長所と課題を客観的に把握し、憧れの店舗へ実習依頼の一歩を踏み出した。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 齋藤先生</p>
+        <p class="card-judge-text">調査と実践が重層的で丁寧で、自分のキャリア形成と絡めて長期間取り組んでいるところが素晴らしい。文化＆伝統についても理解できる内容である。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1DKOE2IzG5DRvx9WHejuVFKOEVtp0jBzT/view?usp=sharing">詳しく見る</button>
+    </div></div>
+    <div class="card mid-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-優秀賞">◎ 優秀賞</span><span class="tag tag-category">課題解決型</span></div>
+      <p class="card-title">写真が上手くなるには</p>
+      <p class="card-desc">構図・光・露出・レンズ特性・現像処理まで試行錯誤を重ね、自分の撮影技術の変化を記録した探究。専門用語を噛み砕き作例を多数添えた、マニュアル本のような完成度。「見る→学ぶ→撮る→振り返る」の循環が自然に継続された自走する学びの好例。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 齋藤先生</p>
+        <p class="card-judge-text">圧倒的なボリューム。旺盛な探究心である。難しい用語も読者がわかるように丁寧に説明している。完成度が写真撮影のマニュアル本のレベルである。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1oMIbqIyrqhkNNmUfoxmxOKunJjx4w-rA/view?usp=sharing">詳しく見る</button>
+    </div></div>
+    <div class="card special-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-審査員特別賞">★ 審査員特別賞</span><span class="tag tag-category">課題解決型</span></div>
+      <p class="card-title">就職先が決まるまで</p>
+      <p class="card-desc">自己分析・企業研究・面接準備・実習・内定に至るプロセスを、心の動きとともに等身大で綴った記録型探究。失敗や不安、揺らぎも包み隠さず書き残すことで、就職活動が「自己と社会をつなぎ直す学び」であることを描き出す。後輩のための実践的マニュアルにもなる一次資料。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 齋藤先生</p>
+        <p class="card-judge-text">リアルな就職活動の記録としてとても貴重なレポートである。自己を見つめ直す過程に、審査員一同、涙が出るほどの感銘を受けた。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1ZIJ8oVkNt1Nn4TDXTIRun8LKCSMeMvdz/view?usp=sharing">詳しく見る</button>
+    </div></div>
+  </div>
+</section>
+
+<!-- 創造型 -->
+<section class="section" data-category="創造型">
+  <div class="section-header">
+    <span class="section-chip"><span class="section-chip-emoji">🎨</span>創造型</span>
+  </div>
+  <div class="cards">
+    <div class="card top-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-最優秀賞">🏆 最優秀賞</span><span class="tag tag-category">創造型</span></div>
+      <p class="card-title">練り切りづくり</p>
+      <p class="card-desc">代表的な和菓子「練り切り」の歴史と制作工程を調べ、四季折々の意匠を自らの手で再現した食文化探究。白餡・求肥・食紅・道具の扱いまで細部にこだわり写真と解説で丁寧に記録。「食べる側」から「作る側」へと視点を移し、伝統を担い受け継ぐ意義にも思いを巡らせた意欲作。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 梅津先生</p>
+        <p class="card-judge-text">興味を持ち徹底的に再現していく様に目を見張りました。伝統を大事にする心も合わせて評価の対象となりました。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1FKCmyxjPRCl7uOdd1nZfsGe65pOg1jc7/view?usp=sharing">詳しく見る</button>
+    </div></div>
+    <div class="card mid-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-優秀賞">◎ 優秀賞</span><span class="tag tag-category">創造型</span></div>
+      <p class="card-title">スクリーン７ G-0</p>
+      <p class="card-desc">美術大学進学を目指す生徒が依頼制作に向き合い、作品完成までの思考プロセスと人間的成長をドキュメント。テーマ設定・下絵・素材選定・制作・推敲の各段階で他者との対話と自己批評が緻密に織り込まれ、技術・思索・発信の三拍子が揃った探究。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 梅津先生</p>
+        <p class="card-judge-text">自身の人間的な成長と合わせて自分を見つめていく姿勢、作品の完成度の高さ、発表作品の体裁の斬新さも素晴らしい。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1aaFqKHTYZ6iT9GhyxHxAa7rbdYQEfVS9/view?usp=sharing">詳しく見る</button>
+    </div></div>
+  </div>
+</section>
+
+<!-- 知的発見型 -->
+<section class="section" data-category="知的発見型">
+  <div class="section-header">
+    <span class="section-chip"><span class="section-chip-emoji">🔍</span>知的発見型</span>
+  </div>
+  <div class="cards">
+    <div class="card top-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-最優秀賞">🏆 最優秀賞</span><span class="tag tag-category">知的発見型</span></div>
+      <p class="card-title">『そして誰もいなくなった』オマージュ作品リスト</p>
+      <p class="card-desc">クリスティの名作のオマージュ群をテーマに長編15冊・短編集2冊を自ら選定。「舞台設定」「登場人物」「犯人の動機」「フェアプレイの度合い」を比較軸として整理し、原典の骨格がどう受け継がれどう変奏されているかを自分の言葉で再構成した文学探究。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 上田先生</p>
+        <p class="card-judge-text">精緻な分析と、自分の言葉で再構成する力量は圧巻。大胆かつ知的な課題設定と群を抜く筆力を高く評価したい。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1VorVgFzz68Z401IA40xklhBcUY_FezSW/view?usp=sharing">詳しく見る</button>
+    </div></div>
+    <div class="card mid-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-優秀賞">◎ 優秀賞</span><span class="tag tag-category">知的発見型</span></div>
+      <p class="card-title">アリの生態研究〜全滅まで〜</p>
+      <p class="card-desc">採集から石膏巣の自作、エサ・湿度・温度の管理、行動観察まで丹念に記録した生物学的探究。コロニーが「全滅」するという痛手を負いながらも原因を多角的に考察し次の観察計画へとフィードバック。失敗を成果に転化する粘り強さと対象への愛情が両立した作品。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 上田先生</p>
+        <p class="card-judge-text">全滅という結果から目を逸らさずに学ぼうとする姿勢に胸を打たれた。結果以上に「向き合い方」が光る探究である。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1cmr3daZ0PBwXAv8hSfSoZOPlASSvRiNd/view?usp=sharing">詳しく見る</button>
+    </div></div>
+    <div class="card special-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-審査員特別賞">★ 審査員特別賞</span><span class="tag tag-category">知的発見型</span></div>
+      <p class="card-title">高校数学から見る群論の面白さ</p>
+      <p class="card-desc">大学以降で学ぶ抽象代数学の一分野「群論」を高校数学の視点から捉え直した挑戦的数学探究。ガロアの生涯を辿りながら対称性・置換群・部分群を図や自作模型で可視化。AIに頼らず自分の手と頭で思考し続けた誠実さが随所に感じられる作品。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 上田先生</p>
+        <p class="card-judge-text">AIに頼らず思考を貫いた誠実さと、「好き」を再確認した過程を高く評価したい。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/18bUlH_YTdVxMn7U2ycS-QIoUOZ5G-iBi/view?usp=sharing">詳しく見る</button>
+    </div></div>
+  </div>
+</section>
+
+<!-- 教科推薦 -->
+<section class="section" data-category="教科推薦">
+  <div class="section-header">
+    <span class="section-chip"><span class="section-chip-emoji">📚</span>教科推薦</span>
+  </div>
+  <div class="cards">
+
+    <div class="card subject-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-subject">国語科（言語文化）</span><span class="tag tag-category">教科推薦</span></div>
+      <p class="card-title">見る、知る、学ぶ。桜と文学・桜と古典芸能</p>
+      <p class="card-desc">万葉集から現代詩まで文学と古典芸能を横断して桜の表象を辿った言語文化探究。文学と伝統芸能を「結びつける」視点が最大の強みで、日本人の美意識や無常観を浮かび上がらせた重層的な読解力と構成力を示す骨太な作品。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 国語科</p>
+        <p class="card-judge-text">日本の言語文化の特質を深く考察し、桜と伝統芸能を結びつけ、日本人の美意識や心情を多角的に探究しているところがすばらしいです。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1nQ8uD13HeZxlnEqWwO2JaL5xtJmJrPuv/view?usp=sharing">詳しく見る</button>
+    </div></div>
+
+    <div class="card subject-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-subject">数学科（数学Ⅰ）</span><span class="tag tag-category">教科推薦</span></div>
+      <p class="card-title">三角関数を和算の角度から調べて実際に試行してみた</p>
+      <p class="card-desc">鎖国期に独自発展した「和算」の視点から三角関数を捉え直した歴史×数学探究。『塵劫記』の測量問題に取り組み道具を自作して屋外で検証。和算と西洋数学それぞれの強みと発想の違いを浮き彫りにした、先人の知恵に手を動かして触れる作品。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 数学科</p>
+        <p class="card-judge-text">道具を自作し和算の問題を解き、和算と西洋数学の違いや和算を使うメリットにも気づけています。数学の専門性を感じる作品です。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/12p4jP387uM7JtpX_2V_IlnbdfvE3AVoO/view?usp=sharing">詳しく見る</button>
+    </div></div>
+
+    <div class="card subject-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-subject">地歴科（地理総合）</span><span class="tag tag-category">教科推薦</span></div>
+      <p class="card-title">Sky Mapping ― 空撮が切り開く新たな地理探究―</p>
+      <p class="card-desc">ドローン空撮をテーマに地理的思考と法的規制の両面から解きほぐした地理探究。産業・物流・観光・災害対応・測量など多方面への活用可能性を具体例とともに検討。規制・倫理・技術の三つ巴を押さえた現代的テーマを地に足のついた筆致でまとめた作品。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 地歴科</p>
+        <p class="card-judge-text">地理的思考や法的規制の観点から丁寧に解説。産業・物流・観光など多方面の視点からも調査しており、視野を広くもってまとめられている。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1F2L6IO_WdGMin_RSaf4vWUoy97jPT0Ij/view?usp=sharing">詳しく見る</button>
+    </div></div>
+
+    <div class="card subject-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-subject">公民科（政治・経済）</span><span class="tag tag-category">教科推薦</span></div>
+      <p class="card-title">物価高でも子ども食堂の食材と笑顔は絶やさない</p>
+      <p class="card-desc">物価高騰が子ども食堂の運営現場にどう影響するかを実地データで分析。代替食材の栄養素とコストを数値で比較し、安価でも栄養を損なわないメニュー設計を具体的に提案。「調べる」から「解決策を描く」段階まで踏み込んだ社会課題探究。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 公民科</p>
+        <p class="card-judge-text">代替食材の栄養素とコストを数値で比較して具体策を出した点や、社会貢献への意欲が素晴らしいです。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1sy5gPwVlYLZc-EBurHCgrCs3gSj0kdxW/view?usp=sharing">詳しく見る</button>
+    </div></div>
+
+    <div class="card subject-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-subject">理科（生物基礎）</span><span class="tag tag-category">教科推薦</span></div>
+      <p class="card-title">アリの生態研究（〜全滅まで〜）</p>
+      <p class="card-desc">採集・飼育・観察を一連プロセスとしてやり抜いた生物探究の王道。石膏巣を自作し湿度・エサ・光条件を記録しながら行動を追跡。「全滅」という苦い結果も環境要因・個体間相互作用・外的ストレスから多角的に分析し次回計画へ反映した科学的リテラシーの体現。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 理科</p>
+        <p class="card-judge-text">失敗を単なる終わりにせず原因をさまざまな視点で考察し、次の観察環境に反映していくという、科学的な探究姿勢を貫いた点を高く評価します。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1_dJTOqolQD_z8JsqwgNEeO_6er5ulsx_/view?usp=sharing">詳しく見る</button>
+    </div></div>
+
+    <div class="card subject-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-subject">外国語科（論理表現Ⅰ）</span><span class="tag tag-category">教科推薦</span></div>
+      <p class="card-title">私の人生メモリー</p>
+      <p class="card-desc">人生の節目を写真と英文で振り返り、自己の成長を外国語でまとめ直した自己表現型探究。時制・語彙・構文を工夫しながら英語で記述し「語りの力」を獲得。新たに学んだ表現・文法を丁寧に注記しており、アイデンティティの深化と言語運用力の向上が同時に起こった作品。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 外国語科</p>
+        <p class="card-judge-text">英語でわかりやすくまとめられ、まとめていく中で新たに学んだ事項も丁寧に記載されており、2重の意味で成長のよく見える素敵なマイプロでした。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1V0LBC7XvN9tR_qgdgC6u5SK_Hry8i_Bl/view?usp=sharing">詳しく見る</button>
+    </div></div>
+
+    <div class="card subject-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-subject">保健体育科（体育）</span><span class="tag tag-category">教科推薦</span></div>
+      <p class="card-title">変化球の投げ方について</p>
+      <p class="card-desc">カーブ・スライダー・フォークなどの握り・回転・軌道を文献やデータから分析し、最終的に自分で投げて検証。映像や比較表で論点を整理しつつ「なぜその球種はこう曲がるのか」を運動学・物理の観点から追究。調べ学習で終わらず技術習得にまで踏み込んだ姿勢が光る。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 保健体育科</p>
+        <p class="card-judge-text">結果の内容も考察もしており、調べるだけでは終わらずに技術取得に向けても取り組むことができていたため高評価でした。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1m9nKfK6eYLy1tu-vhia5GmkEZBDujh4d/view?usp=sharing">詳しく見る</button>
+    </div></div>
+
+    <div class="card subject-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-subject">芸術科（美術Ⅰ）</span><span class="tag tag-category">教科推薦</span></div>
+      <p class="card-title">空き瓶とガラスペイントでインテリア制作</p>
+      <p class="card-desc">家庭で出た空き瓶を素材にガラス絵の具で彩色したインテリア作品の美術探究。未知の画材の発色・濃度・乾燥挙動を分析して試作を重ね、インスピレーションが湧き熱量が上がっていく瞬間まで素直に綴る。素材への敬意・観察・試行錯誤・表現が一本につながった体験の厚みがある作品。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 芸術科</p>
+        <p class="card-judge-text">色彩の分析から始まり、試行錯誤の課程も含めて丁寧にレポートが作成されている。芸術科のマイプロとして非常に好感が持てる。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1TDQ__bpVoJME5Q72bl990hzSaTinij1n/view?usp=sharing">詳しく見る</button>
+    </div></div>
+
+    <div class="card subject-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-subject">家庭科（家庭総合）</span><span class="tag tag-category">教科推薦</span></div>
+      <p class="card-title">アメ</p>
+      <p class="card-desc">「のど飴」への素朴な疑問から原材料・食品添加物・アレルギー表示・法規制まで踏み込んだ家庭総合探究。分からなかったことをメーカーに問い合わせ、さらに自分で調べるという「探究の往還」が実直に重ねられ、身近な消費生活が社会制度へと接続される好例。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 家庭科</p>
+        <p class="card-judge-text">アレルギー表示が食品添加物につながるという新たな発見。会社に問い合わせてみるという経験も貴重で、よい探究学習になっています。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/13Cx5fadhWF3DtjCN44hAeSLHsu2RXJx1/view?usp=sharing">詳しく見る</button>
+    </div></div>
+
+    <div class="card subject-award"><div class="card-inner">
+      <div class="card-tags"><span class="tag tag-subject">情報科（情報Ⅰ）</span><span class="tag tag-category">教科推薦</span></div>
+      <p class="card-title">自作PCでAIと向き合ってみた</p>
+      <p class="card-desc">パーツ選定・組み立てから始まる自作PCを土台として、生成AIとの対話や画像生成を通じ「情報をどう扱い活用するか」を実践的に考察。ハード性能とAI応答品質の関係・プロンプト工夫による出力変化を情報処理の視点で分析。AIを「使う」だけでなく「向き合う」姿勢が光る。</p>
+      <div class="card-judge">
+        <p class="card-judge-label">審査員講評 — 情報科</p>
+        <p class="card-judge-text">画質の比較やAIと対話するところに高い教科との関連性を感じました。情報の処理や活用の視点が明確で、学習内容の理解が深まっている。</p>
+      </div>
+      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1VX16bo4O3StKVvPd3o7C3o9MPT5623g9/view?usp=sharing">詳しく見る</button>
+    </div></div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ── 総評 ───────────────────────────────────────────── -->
+<div class="review-band">
+  <div class="review-band-inner">
+    <div class="review-photo">
+      <!-- 市川先生の写真が入ったら <img> タグに差し替えてください -->
+      <span class="review-photo-hint">市川先生<br>写真</span>
+    </div>
+    <div class="review-content">
+      <div class="review-meta">
+        <p class="review-badge">📝 総評</p>
+        <p class="review-name">審査委員長　市川力先生より</p>
+      </div>
+      <div class="review-body">
+        <p>今年も面白いマイプロの数々に出会い、そうきたか！とニンマリした。アワードを決めるにあたり２つを心がけた。①これまでチャレンジした学び手がさらに質を高める指針となるか。②これからチャレンジしようとする学び手に「やってみよう」という気持ちを与えるか。</p>
+        <p>マイプロの「マイ」は「自分なりに」。好きなことや得意なことがあれば始めやすいが、なくても大丈夫。身のまわりのちょっとした気になること・悩み・やらなきゃいけないことからスタートすればいい。ノミネートされた作品はどれも、その「自分なり」を素直に追いかけているところが魅力的だ。</p>
+        <p>「マイ」が決まればあとは「プロジェクト」にするだけ。調べ・試し・つくり・発見を表現する。失敗だらけでも迷いっぱなしでも構わない。やらずに立ち止まるより、やってみてから考える。起こったことを冷静に見つめ、次へ地道に進む歩みを記録し、読み手の心を動かす表現を工夫することがノミネートとアワードへの道だ。</p>
+        <p>こうして生まれたマイプロは「自分なり」でありながら、他者の気持ちを揺さぶり世の中をよりよく変えてゆく何かとつながっている。次のマイプロはもうスタートした。人生思い立ったらいつでもマイプロ。面白がる心だけ持っていざスタート！</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logos">
+    <a href="https://at-mhk.com/" target="_blank" rel="noopener noreferrer">
+      <img src="logo-mhk.png" alt="明蓬館高等学校">
+    </a>
+    <a href="https://at-mhk.com/kokusai/" target="_blank" rel="noopener noreferrer">
+      <img src="logo-kokusai.png" alt="アットマーク国際高等学校">
+    </a>
+  </div>
+  <p>マイプロアワード2025 受賞作品紹介 特設サイト</p>
+  <p style="margin-top:4px;font-size:0.68rem">令和7年度</p>
+</footer>
+
+<!-- ── MODAL ─────────────────────────────────────────── -->
+<div class="modal-overlay" id="cardModal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="閉じる">✕</button>
+    <div class="modal-tags" id="modalTags"></div>
+    <p class="modal-title" id="modalTitle"></p>
+    <p class="modal-desc" id="modalDesc"></p>
+    <div class="modal-judge" id="modalJudge">
+      <p class="modal-judge-label" id="modalJudgeLabel"></p>
+      <p class="modal-judge-text" id="modalJudgeText"></p>
+    </div>
+    <a class="modal-link" id="modalLink" href="#" target="_blank" rel="noopener noreferrer">
+      作品を見る <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<script>
+  /* フィルター */
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.section[data-category]').forEach(s => {
+        s.classList.toggle('hidden', f !== 'all' && s.dataset.category !== f);
+      });
+    });
+  });
+
+  /* スクロールアニメーション */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.05 });
+
+  document.querySelectorAll('.section, .notice-band, .review-band').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.06}s`;
+    obs.observe(el);
+  });
+
+  /* モーダル */
+  const modal    = document.getElementById('cardModal');
+  const mTitle   = document.getElementById('modalTitle');
+  const mDesc    = document.getElementById('modalDesc');
+  const mTags    = document.getElementById('modalTags');
+  const mJLabel  = document.getElementById('modalJudgeLabel');
+  const mJText   = document.getElementById('modalJudgeText');
+  const mLink    = document.getElementById('modalLink');
+
+  document.querySelectorAll('.card-detail-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const inner = btn.closest('.card-inner');
+      mTags.innerHTML  = inner.querySelector('.card-tags').innerHTML;
+      mTitle.textContent = inner.querySelector('.card-title').textContent;
+      mDesc.textContent  = inner.querySelector('.card-desc').textContent;
+      mJLabel.textContent = inner.querySelector('.card-judge-label').textContent;
+      mJText.textContent  = inner.querySelector('.card-judge-text').textContent;
+      mLink.href = btn.dataset.href;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>
