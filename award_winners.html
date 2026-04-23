@@ -296,6 +296,22 @@
     display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
   }
 
+  /* CARD ACTIONS */
+  .card-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+  /* DIRECT LINK */
+  .card-link {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+    color: var(--accent-deep);
+    background: transparent;
+    border: 1.5px solid var(--accent-dark);
+    padding: 5px 16px; border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.18s, color 0.18s;
+  }
+  .card-link:hover { background: var(--accent-pale); }
+
   /* DETAIL BUTTON */
   .card-detail-btn {
     display: inline-flex; align-items: center; gap: 6px;
@@ -475,7 +491,7 @@
         <p class="card-judge-label">審査員講評 — 齋藤先生</p>
         <p class="card-judge-text">調査と実践が重層的で丁寧で、自分のキャリア形成と絡めて長期間取り組んでいるところが素晴らしい。文化＆伝統についても理解できる内容である。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1DKOE2IzG5DRvx9WHejuVFKOEVtp0jBzT/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/1DKOE2IzG5DRvx9WHejuVFKOEVtp0jBzT/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/1DKOE2IzG5DRvx9WHejuVFKOEVtp0jBzT/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
     <div class="card mid-award"><div class="card-inner">
       <div class="card-tags"><span class="tag tag-優秀賞">◎ 優秀賞</span><span class="tag tag-category">課題解決型</span></div>
@@ -485,7 +501,7 @@
         <p class="card-judge-label">審査員講評 — 齋藤先生</p>
         <p class="card-judge-text">圧倒的なボリューム。旺盛な探究心である。難しい用語も読者がわかるように丁寧に説明している。完成度が写真撮影のマニュアル本のレベルである。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1oMIbqIyrqhkNNmUfoxmxOKunJjx4w-rA/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/1oMIbqIyrqhkNNmUfoxmxOKunJjx4w-rA/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/1oMIbqIyrqhkNNmUfoxmxOKunJjx4w-rA/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
     <div class="card special-award"><div class="card-inner">
       <div class="card-tags"><span class="tag tag-審査員特別賞">★ 審査員特別賞</span><span class="tag tag-category">課題解決型</span></div>
@@ -495,7 +511,7 @@
         <p class="card-judge-label">審査員講評 — 齋藤先生</p>
         <p class="card-judge-text">リアルな就職活動の記録としてとても貴重なレポートである。自己を見つめ直す過程に、審査員一同、涙が出るほどの感銘を受けた。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1ZIJ8oVkNt1Nn4TDXTIRun8LKCSMeMvdz/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/1ZIJ8oVkNt1Nn4TDXTIRun8LKCSMeMvdz/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/1ZIJ8oVkNt1Nn4TDXTIRun8LKCSMeMvdz/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
   </div>
 </section>
@@ -514,7 +530,7 @@
         <p class="card-judge-label">審査員講評 — 梅津先生</p>
         <p class="card-judge-text">興味を持ち徹底的に再現していく様に目を見張りました。伝統を大事にする心も合わせて評価の対象となりました。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1FKCmyxjPRCl7uOdd1nZfsGe65pOg1jc7/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/1FKCmyxjPRCl7uOdd1nZfsGe65pOg1jc7/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/1FKCmyxjPRCl7uOdd1nZfsGe65pOg1jc7/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
     <div class="card mid-award"><div class="card-inner">
       <div class="card-tags"><span class="tag tag-優秀賞">◎ 優秀賞</span><span class="tag tag-category">創造型</span></div>
@@ -524,7 +540,7 @@
         <p class="card-judge-label">審査員講評 — 梅津先生</p>
         <p class="card-judge-text">自身の人間的な成長と合わせて自分を見つめていく姿勢、作品の完成度の高さ、発表作品の体裁の斬新さも素晴らしい。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1aaFqKHTYZ6iT9GhyxHxAa7rbdYQEfVS9/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/1aaFqKHTYZ6iT9GhyxHxAa7rbdYQEfVS9/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/1aaFqKHTYZ6iT9GhyxHxAa7rbdYQEfVS9/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
   </div>
 </section>
@@ -543,7 +559,7 @@
         <p class="card-judge-label">審査員講評 — 上田先生</p>
         <p class="card-judge-text">精緻な分析と、自分の言葉で再構成する力量は圧巻。大胆かつ知的な課題設定と群を抜く筆力を高く評価したい。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1VorVgFzz68Z401IA40xklhBcUY_FezSW/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/1VorVgFzz68Z401IA40xklhBcUY_FezSW/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/1VorVgFzz68Z401IA40xklhBcUY_FezSW/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
     <div class="card mid-award"><div class="card-inner">
       <div class="card-tags"><span class="tag tag-優秀賞">◎ 優秀賞</span><span class="tag tag-category">知的発見型</span></div>
@@ -553,7 +569,7 @@
         <p class="card-judge-label">審査員講評 — 上田先生</p>
         <p class="card-judge-text">全滅という結果から目を逸らさずに学ぼうとする姿勢に胸を打たれた。結果以上に「向き合い方」が光る探究である。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1cmr3daZ0PBwXAv8hSfSoZOPlASSvRiNd/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/1cmr3daZ0PBwXAv8hSfSoZOPlASSvRiNd/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/1cmr3daZ0PBwXAv8hSfSoZOPlASSvRiNd/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
     <div class="card special-award"><div class="card-inner">
       <div class="card-tags"><span class="tag tag-審査員特別賞">★ 審査員特別賞</span><span class="tag tag-category">知的発見型</span></div>
@@ -563,7 +579,7 @@
         <p class="card-judge-label">審査員講評 — 上田先生</p>
         <p class="card-judge-text">AIに頼らず思考を貫いた誠実さと、「好き」を再確認した過程を高く評価したい。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/18bUlH_YTdVxMn7U2ycS-QIoUOZ5G-iBi/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/18bUlH_YTdVxMn7U2ycS-QIoUOZ5G-iBi/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/18bUlH_YTdVxMn7U2ycS-QIoUOZ5G-iBi/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
   </div>
 </section>
@@ -583,7 +599,7 @@
         <p class="card-judge-label">審査員講評 — 国語科</p>
         <p class="card-judge-text">日本の言語文化の特質を深く考察し、桜と伝統芸能を結びつけ、日本人の美意識や心情を多角的に探究しているところがすばらしいです。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1nQ8uD13HeZxlnEqWwO2JaL5xtJmJrPuv/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/1nQ8uD13HeZxlnEqWwO2JaL5xtJmJrPuv/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/1nQ8uD13HeZxlnEqWwO2JaL5xtJmJrPuv/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
 
     <div class="card subject-award"><div class="card-inner">
@@ -594,7 +610,7 @@
         <p class="card-judge-label">審査員講評 — 数学科</p>
         <p class="card-judge-text">道具を自作し和算の問題を解き、和算と西洋数学の違いや和算を使うメリットにも気づけています。数学の専門性を感じる作品です。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/12p4jP387uM7JtpX_2V_IlnbdfvE3AVoO/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/12p4jP387uM7JtpX_2V_IlnbdfvE3AVoO/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/12p4jP387uM7JtpX_2V_IlnbdfvE3AVoO/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
 
     <div class="card subject-award"><div class="card-inner">
@@ -605,7 +621,7 @@
         <p class="card-judge-label">審査員講評 — 地歴科</p>
         <p class="card-judge-text">地理的思考や法的規制の観点から丁寧に解説。産業・物流・観光など多方面の視点からも調査しており、視野を広くもってまとめられている。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1F2L6IO_WdGMin_RSaf4vWUoy97jPT0Ij/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/1F2L6IO_WdGMin_RSaf4vWUoy97jPT0Ij/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/1F2L6IO_WdGMin_RSaf4vWUoy97jPT0Ij/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
 
     <div class="card subject-award"><div class="card-inner">
@@ -616,7 +632,7 @@
         <p class="card-judge-label">審査員講評 — 公民科</p>
         <p class="card-judge-text">代替食材の栄養素とコストを数値で比較して具体策を出した点や、社会貢献への意欲が素晴らしいです。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1sy5gPwVlYLZc-EBurHCgrCs3gSj0kdxW/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/1sy5gPwVlYLZc-EBurHCgrCs3gSj0kdxW/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/1sy5gPwVlYLZc-EBurHCgrCs3gSj0kdxW/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
 
     <div class="card subject-award"><div class="card-inner">
@@ -627,7 +643,7 @@
         <p class="card-judge-label">審査員講評 — 理科</p>
         <p class="card-judge-text">失敗を単なる終わりにせず原因をさまざまな視点で考察し、次の観察環境に反映していくという、科学的な探究姿勢を貫いた点を高く評価します。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1_dJTOqolQD_z8JsqwgNEeO_6er5ulsx_/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/1_dJTOqolQD_z8JsqwgNEeO_6er5ulsx_/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/1_dJTOqolQD_z8JsqwgNEeO_6er5ulsx_/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
 
     <div class="card subject-award"><div class="card-inner">
@@ -638,7 +654,7 @@
         <p class="card-judge-label">審査員講評 — 外国語科</p>
         <p class="card-judge-text">英語でわかりやすくまとめられ、まとめていく中で新たに学んだ事項も丁寧に記載されており、2重の意味で成長のよく見える素敵なマイプロでした。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1V0LBC7XvN9tR_qgdgC6u5SK_Hry8i_Bl/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/1V0LBC7XvN9tR_qgdgC6u5SK_Hry8i_Bl/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/1V0LBC7XvN9tR_qgdgC6u5SK_Hry8i_Bl/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
 
     <div class="card subject-award"><div class="card-inner">
@@ -649,7 +665,7 @@
         <p class="card-judge-label">審査員講評 — 保健体育科</p>
         <p class="card-judge-text">結果の内容も考察もしており、調べるだけでは終わらずに技術取得に向けても取り組むことができていたため高評価でした。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1m9nKfK6eYLy1tu-vhia5GmkEZBDujh4d/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/1m9nKfK6eYLy1tu-vhia5GmkEZBDujh4d/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/1m9nKfK6eYLy1tu-vhia5GmkEZBDujh4d/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
 
     <div class="card subject-award"><div class="card-inner">
@@ -660,7 +676,7 @@
         <p class="card-judge-label">審査員講評 — 芸術科</p>
         <p class="card-judge-text">色彩の分析から始まり、試行錯誤の課程も含めて丁寧にレポートが作成されている。芸術科のマイプロとして非常に好感が持てる。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1TDQ__bpVoJME5Q72bl990hzSaTinij1n/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/1TDQ__bpVoJME5Q72bl990hzSaTinij1n/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/1TDQ__bpVoJME5Q72bl990hzSaTinij1n/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
 
     <div class="card subject-award"><div class="card-inner">
@@ -671,7 +687,7 @@
         <p class="card-judge-label">審査員講評 — 家庭科</p>
         <p class="card-judge-text">アレルギー表示が食品添加物につながるという新たな発見。会社に問い合わせてみるという経験も貴重で、よい探究学習になっています。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/13Cx5fadhWF3DtjCN44hAeSLHsu2RXJx1/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/13Cx5fadhWF3DtjCN44hAeSLHsu2RXJx1/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/13Cx5fadhWF3DtjCN44hAeSLHsu2RXJx1/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
 
     <div class="card subject-award"><div class="card-inner">
@@ -682,7 +698,7 @@
         <p class="card-judge-label">審査員講評 — 情報科</p>
         <p class="card-judge-text">画質の比較やAIと対話するところに高い教科との関連性を感じました。情報の処理や活用の視点が明確で、学習内容の理解が深まっている。</p>
       </div>
-      <button class="card-detail-btn" data-href="https://drive.google.com/file/d/1VX16bo4O3StKVvPd3o7C3o9MPT5623g9/view?usp=sharing">詳しく見る</button>
+      <div class="card-actions"><button class="card-detail-btn" data-href="https://drive.google.com/file/d/1VX16bo4O3StKVvPd3o7C3o9MPT5623g9/view?usp=sharing">詳しく見る</button><a class="card-link" href="https://drive.google.com/file/d/1VX16bo4O3StKVvPd3o7C3o9MPT5623g9/view?usp=sharing" target="_blank" rel="noopener noreferrer">作品を見る <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div></div>
 
   </div>
